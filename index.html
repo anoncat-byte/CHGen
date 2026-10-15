@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f8f1">
+    <meta name="description" content="A welcoming place for children and families to grow in faith together.">
+    <title>Little Lights | Children's Ministry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="public-view">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="Little Lights home">
+          <span class="brand-mark" aria-hidden="true">ll</span>
+          <span class="brand-name">little lights<span>CHILDREN'S MINISTRY</span></span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#highlights">Our ministry</a>
+          <a href="#people">Our people</a>
+          <a href="#visit">Find us</a>
+        </nav>
+        <button class="button button-small button-ink" id="open-login" type="button">Team sign in <span aria-hidden="true">↗</span></button>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <img class="hero-image" src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=2000&q=85" alt="Children playing together outdoors" fetchpriority="high">
+          <div class="hero-shade"></div>
+          <div class="hero-copy">
+            <p class="eyebrow eyebrow-light"><span></span> A little room to grow</p>
+            <h1 id="hero-title">Children's<br>Ministry</h1>
+            <p class="hero-intro">A joyful place to discover faith, build friendships, and know you belong.</p>
+            <a class="button button-coral" href="#highlights">See what's growing <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-note"><span>FAITH, FRIENDSHIP, AND A LITTLE WONDER</span><span>01 / 03</span></div>
+        </section>
+
+        <section class="welcome-strip" aria-label="Ministry values">
+          <p>Big questions welcome.</p><span aria-hidden="true">✳</span>
+          <p>Every family belongs.</p><span aria-hidden="true">✳</span>
+          <p>Growing together, every week.</p>
+        </section>
+
+        <section class="section highlights-section" id="highlights">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow"><span></span> The good we're growing</p>
+              <h2>Small moments.<br><em>Lasting roots.</em></h2>
+            </div>
+            <p class="section-lede">Every week gives us another reason to be grateful. Here's a glimpse of what our ministry is all about.</p>
+          </div>
+          <div class="highlight-grid" id="public-highlights"></div>
+        </section>
+
+        <section class="people-section" id="people">
+          <div class="people-inner">
+            <div class="people-heading">
+              <p class="eyebrow eyebrow-light"><span></span> The hands and hearts</p>
+              <h2>Good people.<br><em>Good things happen.</em></h2>
+              <p>It takes a caring community to help children feel safe, seen, and encouraged.</p>
+              <p class="team-sample-note" id="public-team-note">Sample roster. Replace these names and details with your ministry team.</p>
+            </div>
+            <div class="team-list" id="public-team-list"></div>
+          </div>
+        </section>
+
+        <section class="visit-section" id="visit">
+          <div class="visit-map" aria-hidden="true"><div class="map-grid"></div><span class="map-pin">✳</span><span class="map-label">OUR PLACE</span></div>
+          <div class="visit-copy">
+            <p class="eyebrow"><span></span> Come as you are</p>
+            <h2>There's a place<br>for <em>your family.</em></h2>
+            <p class="visit-detail" id="public-location-name">Main church campus</p>
+            <p id="public-location-detail">Children's ministry check-in is at the welcome desk.</p>
+            <p class="visit-address" id="public-location-address">Church address to be added</p>
+          </div>
+          <div class="visit-side-note">SUNDAY<br><span>TOGETHER</span></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <a class="brand brand-footer" href="#top"><span class="brand-mark" aria-hidden="true">ll</span><span class="brand-name">little lights<span>CHILDREN'S MINISTRY</span></span></a>
+        <p>Making room for faith to take root.</p>
+        <a href="#top">Back to top ↑</a>
+      </footer>
+    </div>
+
+    <main class="login-view" id="login-view" hidden>
+      <button class="back-link" id="back-to-site" type="button">← Back to the ministry site</button>
+      <div class="login-layout">
+        <div class="login-art">
+          <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=80" alt="Children spending time together">
+          <div class="login-art-copy"><p class="eyebrow eyebrow-light"><span></span> Little Lights team</p><h1>Care grows<br>here.</h1></div>
+        </div>
+        <form class="login-form" id="login-form">
+          <p class="eyebrow"><span></span> Team portal</p>
+          <h2>Welcome back.</h2>
+          <p class="login-subtitle">Sign in to your ministry workspace.</p>
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="username" placeholder="you@example.com" required>
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+          <p class="login-error" id="login-error" role="alert" hidden>That email and password don't match a team account.</p>
+          <button class="button button-coral login-submit" type="submit">Sign in <span aria-hidden="true">→</span></button>
+          <p class="login-footnote">For ministry team members only.</p>
+          <div class="demo-access">
+            <strong>Demo access</strong>
+            <span>Admin: admin@demo.org</span>
+            <span>Moderator: moderator@demo.org</span>
+            <span>Password for both: GrowTogether26!</span>
+            <small>Prototype only. Do not enter real personal or child information.</small>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <main class="dashboard-view" id="dashboard-view" hidden>
+      <header class="dashboard-header">
+        <a class="brand" href="#" id="dashboard-home"><span class="brand-mark" aria-hidden="true">ll</span><span class="brand-name">little lights<span>TEAM PORTAL</span></span></a>
+        <div class="dashboard-user"><span class="user-avatar" id="user-avatar">A</span><span><strong id="user-name">Team member</strong><small id="user-role">Admin</small></span><button id="sign-out" class="button button-small button-outline" type="button">Sign out</button></div>
+      </header>
+      <div class="dashboard-shell">
+        <aside class="dashboard-sidebar">
+          <p class="eyebrow">WORKSPACE</p>
+          <button class="sidebar-active" type="button" data-dashboard-tab="overview" aria-current="page">Overview</button>
+          <button type="button" data-dashboard-tab="team">Sunday team</button>
+          <div class="sidebar-bottom"><span class="status-dot"></span> Your team, together</div>
+        </aside>
+        <section class="dashboard-main" id="dashboard-content" aria-live="polite"></section>
+      </div>
+      <footer class="dashboard-footer"><span>Little Lights ministry portal</span><a href="#" id="return-public">View public site ↗</a></footer>
+    </main>
+    <script src="app.js" defer></script>
+  </body>
+</html>
