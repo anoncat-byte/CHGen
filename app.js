@@ -7,7 +7,7 @@ const TEAM_KEY = "little-lights-team";
 const defaultHighlights = [
   {
     title: "Bible stories brought to life",
-    detail: "Hands-on lessons help children connect scripture with everyday choices.",
+    detail: "Hands-on conversations help teens connect scripture with everyday choices.",
   },
   {
     title: "A place for every family",
@@ -15,13 +15,13 @@ const defaultHighlights = [
   },
   {
     title: "Faith beyond Sunday",
-    detail: "Seasonal service moments invite children to care for their neighbors.",
+    detail: "Seasonal service projects invite teens to care for their neighbors.",
   },
 ];
 
 const defaultLocation = {
   name: "Main church campus",
-  detail: "Children's ministry check-in is at the welcome desk.",
+  detail: "Youth ministry meets in the community room. Ask at the welcome desk.",
   address: "Church address to be added",
 };
 
@@ -29,7 +29,7 @@ const defaultTeam = [
   {
     name: "Maya Thompson",
     role: "Ministry Director",
-    responsibility: "Plans weekly lessons and partners with families as children grow in faith.",
+    responsibility: "Plans weekly gatherings and partners with families as teens grow in faith.",
   },
   {
     name: "Caleb Brooks",
@@ -62,15 +62,49 @@ function saveStored(key, value) {
 }
 
 function currentHighlights() {
-  return readStored(HIGHLIGHTS_KEY, defaultHighlights);
+  const highlights = readStored(HIGHLIGHTS_KEY, defaultHighlights);
+  let changed = false;
+  const migrated = highlights.map((item) => {
+    const replacements = {
+      "Hands-on lessons help children connect scripture with everyday choices.": "Hands-on conversations help teens connect scripture with everyday choices.",
+      "Seasonal service moments invite children to care for their neighbors.": "Seasonal service projects invite teens to care for their neighbors.",
+    };
+    if (!replacements[item.detail]) {
+      return item;
+    }
+    changed = true;
+    return { ...item, detail: replacements[item.detail] };
+  });
+  if (changed) {
+    saveStored(HIGHLIGHTS_KEY, migrated);
+  }
+  return migrated;
 }
 
 function currentLocation() {
-  return readStored(LOCATION_KEY, defaultLocation);
+  const location = readStored(LOCATION_KEY, defaultLocation);
+  if (location.detail === "Children's ministry check-in is at the welcome desk.") {
+    const migrated = { ...location, detail: defaultLocation.detail };
+    saveStored(LOCATION_KEY, migrated);
+    return migrated;
+  }
+  return location;
 }
 
 function currentTeam() {
-  return readStored(TEAM_KEY, defaultTeam);
+  const team = readStored(TEAM_KEY, defaultTeam);
+  let changed = false;
+  const migrated = team.map((person) => {
+    if (person.responsibility !== "Plans weekly lessons and partners with families as children grow in faith.") {
+      return person;
+    }
+    changed = true;
+    return { ...person, responsibility: defaultTeam[0].responsibility };
+  });
+  if (changed) {
+    saveStored(TEAM_KEY, migrated);
+  }
+  return migrated;
 }
 
 function renderPublicContent() {
