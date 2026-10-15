@@ -20,9 +20,9 @@ const defaultHighlights = [
 ];
 
 const defaultLocation = {
-  name: "Main church campus",
-  detail: "Youth ministry meets in the community room. Ask at the welcome desk.",
-  address: "Church address to be added",
+  name: "Ayala Malls Cinemas Legazpi",
+  detail: "CHGen meets in Cinema 2 every third Saturday of the month.",
+  address: "Legazpi City, Albay, Philippines",
 };
 
 const defaultTeam = [
