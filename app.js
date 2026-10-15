@@ -22,7 +22,7 @@ const defaultHighlights = [
 const defaultLocation = {
   name: "Ayala Malls Cinemas Legazpi",
   detail: "CHGen meets in Cinema 2 every third Saturday of the month.",
-  address: "Legazpi City, Albay, Philippines",
+  address: "4/F, Ayala Malls Legazpi, Quezon Ave, Legazpi Port District, Legazpi City, 4500 Albay",
 };
 
 const defaultTeam = [
